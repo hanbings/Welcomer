@@ -2,9 +2,7 @@
 
 # 插件被加载时的
 import requests
-
-from plugins.TitleAPI import seed_sub_title, ChatColor
-
+from plugins.TitleAPI import seed_sub_title
 
 # 写入帮助
 def on_load(server, old_module):
