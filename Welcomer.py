@@ -18,7 +18,7 @@ def on_player_joined(server, player):
 
 
 # 接受指令
-def on_info(server, info):
+def on_user_info(server, info):
     tempInfo = str(info)
     if '!!welcomer' in tempInfo:
         if check_player_if_not_command(info):
