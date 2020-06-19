@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # 插件被加载时的
+import json
+
 import requests
 from plugins.TitleAPI import seed_sub_title
 
@@ -29,8 +31,9 @@ def on_user_info(server, info):
 
 # 获取每日一句
 def get_text():
-    req = requests.get('https://v1.hitokoto.cn/?encode=text')
-    return req.text
+    r = requests.get("https://v1.hitokoto.cn/?text")
+    req = json.loads(r.text)
+    return req['hitokoto']
 
 
 # 判断指令是不是处于聊天语句最前方
